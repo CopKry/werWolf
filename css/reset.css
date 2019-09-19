@@ -1,0 +1,97 @@
+body,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+table,
+td,
+img,
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+input{
+	outline: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.bg{
+	top: 0;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.btn {
+	border: none;
+	outline: none;
+	color: #fff;
+	background: url(../img/btnBg.jpg) center;
+	background-repeat: no-repeat;
+	font-size: 1.125rem;
+	letter-spacing: 0.3125rem;
+	border-radius: 0.3125rem;
+}
+.backBtn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	height: 100%;
+	width: 20%;
+	left: 1%;
+	font-size: 2.1875rem;
+	color: white;
+} 
+.backBtn.click{
+	background-image: url(../img/choose.jpg);
+}
+#startGame.click{
+	background-image: url(../img/choose.jpg);
+}
+.header,.main,.footer{ 
+	display: flex;
+	position: fixed;
+	z-index: 1;
+}
+.header{
+	justify-content: center;
+	align-items: center;
+	height: 7%;
+	width: 100%;
+	background: rgba(1,1,1,0.5);
+	color: #800080;
+	top: 0;
+	left: 0;
+}
+.header h1{
+	font-size: 1.5rem;
+}
+.footer{
+	justify-content: center;
+	align-items: center;
+	height: 5%;
+	width: 100%;
+	bottom: 0;
+	color: #800080;
+	font-weight: bold;
+	background: #FFFFFF;
+}
+

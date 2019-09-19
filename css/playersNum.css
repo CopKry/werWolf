@@ -1,0 +1,51 @@
+.main{
+	top: 20%;
+	width: 95%;
+	height: 60%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.choose{
+	width: 33%;
+	height: 50%;
+	background: url(../img/choose.jpg) center no-repeat;
+	background-size: cover;
+	margin-right: 0.0625rem;
+	transition: all 0.5s;
+	color: darkred;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3.125rem;
+	border-radius: 0.3125rem;
+	box-shadow: #800080;
+}
+.choose.click{
+	transform: scale(1.2);
+}
+#showNum{
+	width: 100%;
+	height: 40%; 
+	background-color: rgba(124,2,124,0.2);
+	border: 0.125rem solid rgba(1,1,1,0.5);
+}
+#showNum p{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30%;
+	font-size: 1.875rem;
+	color: white;
+}
+#startGame{
+	text-align: center;
+	height: 3.125rem;
+	width: 9.375rem;
+	position: absolute;
+	bottom: -3.75rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
