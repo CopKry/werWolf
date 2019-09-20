@@ -74,3 +74,84 @@ function $randomArr(arr) {
 	}
 	return arr;
 }
+
+function $createElment() {
+	if (arguments.length === 1) {
+		var el = document.createElement('div');
+		el.className = arguments[0];
+	} else if (arguments.length === 3) {
+		var el = document.createElement(arguments[0]);
+		el[arguments[1]] = arguments[2];
+	}
+	return el;
+}
+
+function $createCard(box, userList, userType) {
+	for (var i = 0; i < userList.length; i++) {
+		var status;
+		switch (userList[i].status) {
+			case 'civilian':
+				status = '村民';
+				break;
+			case 'werWolf':
+				status = '狼人'
+				break;
+			case 'guard':
+				status = '守卫'
+				break;
+			case 'prophet':
+				status = '预言家'
+				break;
+			case 'witch':
+				status = '女巫'
+				break;
+		}
+		var pStr = "<p class='num'>" + (i + 1) + "</p><p class='status'>" + status + "</p>"
+		var div = $createElment('card ' + userList[i].status);
+		var face = $createElment('face ' + userList[i].status)
+		div.appendChild(face);
+		div.innerHTML += pStr;
+		if (userType == 'roleAction') {
+			var die = $createElment('die');
+			var look = $createElment('look');
+			var guard = $createElment('guard');
+			var poison = $createElment('poison');
+			var antidote = $createElment('antidote');
+			var state = $createElment('state');
+			var police = $createElment('police');
+			state.appendChild(poison);
+			state.appendChild(guard);
+			state.appendChild(antidote);
+			div.appendChild(state);
+			div.appendChild(die);
+			div.appendChild(look);
+			div.appendChild(police);
+		} else if (userType = 'selectStatus') {
+			var cardBack = $createElment('cardBack');
+			cardBack.innerText = i + 1;
+			div.appendChild(cardBack);
+		}
+		$getById(box).appendChild(div);
+	}
+}
+
+function $roleActive(_self, prev, clickEl, showElName, className, index) {
+	if (_self.className.indexOf(clickEl) != -1) {
+		$removeClassName(prev.getElementsByClassName(showElName)[0], className)
+		$addClassName(_self.getElementsByClassName(showElName)[0], className)
+		prev = _self;
+		nowBeCao = Number(_self.getElementsByClassName(index)[0].innerText) - 1;
+	} else if (_self.parentNode.className.indexOf(clickEl) != -1) {
+		$removeClassName(prev.getElementsByClassName(showElName)[0], className)
+		$addClassName(_self.parentNode.getElementsByClassName(showElName)[0], className)
+		prev = _self.parentNode;
+		nowBeCao = Number(_self.parentNode.getElementsByClassName(index)[0].innerText) - 1;
+	} else if (_self.parentNode.parentNode.className.indexOf(clickEl) != -1) {
+		$removeClassName(prev.getElementsByClassName(showElName)[0], className)
+		$addClassName(_self.parentNode.parentNode.getElementsByClassName(showElName)[0], className)
+		prev = _self.parentNode.parentNode;
+		nowBeCao = Number(_self.parentNode.parentNode.getElementsByClassName(index)[0].innerText) - 1;
+	}
+	var returnList = [prev, nowBeCao]
+	return returnList;
+}

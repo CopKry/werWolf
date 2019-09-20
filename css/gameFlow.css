@@ -1,0 +1,35 @@
+.main header{
+	width: 100%;
+}
+.day{
+	color: purple;
+	text-align: center;
+	border-bottom: 0.1875rem solid rgba(0,0,0,0.4);
+}
+.main{
+	height: 80%;
+}
+.mainDiv{
+	width: 100%;
+	height: 100%;
+}
+.flowBtn{
+	margin-top: 0.5rem;
+	height: 10%;
+	color: darkred;
+	font-weight: bold;
+	display: flex;
+	font-size: 1.5625rem;
+	justify-content: center;
+	align-items: center;
+	background-image: url(../img/choose.jpg);
+}
+.flowBtn:active{
+	transform: scale(1.2);
+}
+.line{
+	transform: translateY(0.3125rem);
+	height: 0.25rem;
+	width: 100%;
+	background: #8B0000;
+}

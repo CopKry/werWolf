@@ -8,6 +8,7 @@ document.addEventListener('plusready', function() {
 			$addClassName(_self,'click');
 		}
 	})
+	var statusNum = [];
 	document.addEventListener('touchend', function(e) {
 		var _self = e.target;
 		if (_self.id == 'backBtn') {
@@ -26,7 +27,6 @@ document.addEventListener('plusready', function() {
 			userList.push(witch);
 			userList.push(guard);
 			userList.push(prophet);
-			var statusNum = [];
 			switch (parseInt(_self.innerText)) {
 				case 9:
 					statusNum = [3, 3, 3];
@@ -51,6 +51,7 @@ document.addEventListener('plusready', function() {
 			}else{	
 				var user={};
 				user.userList=userList;
+				user.statusNum=statusNum;
 				$setItem('user',user);
 				$alertTitle('游戏开始,哦嚯嚯嚯。');
 				$openHtml("selectStatus.html"); 

@@ -1,39 +1,8 @@
 document.addEventListener('plusready', function() {
-	var userList=$getItem('user').userList;
-	$alertTitle(userList[0].status);
+	var user=$getItem('user')
+	var userList=user.userList;
 	userList=$randomArr(userList);
-	for(var i=0;i<userList.length;i++){
-		var status;
-		var backBgClass;
-		switch(userList[i].status){
-			case 'civilian':
-			status='村民';
-			break;
-			case 'werWolf':
-			status='狼人'
-			break;
-			case 'guard':
-			status='守卫'
-			break;
-			case 'prophet':
-			status='预言家'
-			break;
-			case 'witch':
-			status='女巫'
-			break;
-		}
-		var pStr="<p class='num'>"+(i+1)+"</p><p class='status'>"+status+"</p>"
-		var div=document.createElement('div');
-		var face=document.createElement('div');
-		var cardBack=document.createElement('div')
-		cardBack.className='cardBack'
-		face.className='face '+userList[i].status;
-		div.appendChild(cardBack)
-		div.appendChild(face);
-		div.className='card '+userList[i].status;
-		div.innerHTML+=pStr;
-		$getById('putStatus').appendChild(div);
-	}
+	$createCard('putStatus',userList,'selectStatus');
 	document.addEventListener("touchstart", function(e) {
 		var _self = e.target;
 		if (_self.id == "startGame" || _self.id == 'backBtn') {
@@ -48,7 +17,11 @@ document.addEventListener('plusready', function() {
 			$openHtml('selectPlayersNum.html');
 		}else if(_self.className=='cardBack'){
 			for(var i=0;i<userList.length;i++){
-				$removeClassName($getByClassName('cardBack')[i],'hidden');
+				if(clickNum%2===1){
+					$addClassName($getByClassName('cardBack')[i],'hidden')
+				}else{ 
+					$removeClassName($getByClassName('cardBack')[i],'hidden');
+				}
 			}
 			$addClassName(_self,'hidden');
 		}else if(_self.className.indexOf("card")!=-1){
@@ -60,18 +33,20 @@ document.addEventListener('plusready', function() {
 			if(clickNum%2===0){
 				for(var i=0;i<userList.length;i++){
 					$addClassName($getByClassName('cardBack')[i],'hidden');
+					_self.innerText='上帝闭眼哦嚯嚯'
 				}
 			}else{
 				for(var i=0;i<userList.length;i++){
 					$removeClassName($getByClassName('cardBack')[i],'hidden');
+					_self.innerText='上帝开眼呀哈哈'
 				}
 			}
 			clickNum++
 		}else if(_self.id=='next'){
-			var user={};
 			user.userList=userList;
 			$setItem('user',user);
 			$alertTitle('游戏，开始了')
+			$openHtml('gameFlow.html');
 		}
 	})
 })

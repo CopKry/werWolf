@@ -1,0 +1,32 @@
+.main{
+	top:7.5%;
+	width: 90%;
+	left: 0;
+	right: 0;
+	height: 80%;
+	margin: 0 auto;
+}
+#putLog{
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background: rgba(0,0,0,0.5);
+}
+.log{
+	margin-top: 0.625rem;
+	text-align: center;
+	font-size: 1.5625rem;
+	color: white;
+}
+.btnDiv{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	bottom: 7%;
+	width: 100%;
+	height: 5%;
+	z-index: 7;
+}
+.btnDiv button{
+	margin-left: 0.625rem;
+}

@@ -1,0 +1,128 @@
+.die{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	height: 30%;
+	background: url(../img/die.jpg) center no-repeat;
+	background-size: cover;
+	opacity: 0;
+	transition: all 0.3s;
+}
+.state{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	height: 24%;
+	width: 100%;
+	bottom: 0;
+}
+.look{
+	position: absolute;
+	width: 30%;
+	height: 20%;
+	top: 0;
+	right: 0;
+	background: url(../img/look.jpg) center no-repeat;
+	background-size: cover;
+	opacity: 0;
+}
+.police{
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	right: 5%;
+	top: 20%;
+	background: url(../img/police.jpg) center no-repeat;
+	background-size: contain;
+	opacity: 0;
+}
+.state div{
+	height: 100%;
+	width: 30%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0;
+}
+.state .guard{
+	background-image: url(../img/shield.jpg);
+}
+.state .poison{
+	background-image: url(../img/poison.jpg);
+}
+.state .antidote{
+	background: url(../img/antidote.jpg);
+	background-size: contain;
+}
+ .die.show,.antidote.show,.poison.show,.guard.show,.die.show,.look.show,.police.show{
+	opacity: 1;
+	display: block;
+}
+.poison.used,.antidote.used{
+	opacity: 0.3;
+}
+.selectBox{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 7;
+	transition: all 0.4s;
+	margin-top: -2000px;
+}
+.selectBox.show{
+	margin-top: 0;
+}
+#putWitchSelect{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	position: absolute;
+	left:0;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 auto;
+	height: 60%;
+	width: 100%;
+	border-radius: 0.625rem;
+}
+#putWitchSelect div{
+	margin-left: 0.625rem;
+	width: 30%;
+	height: 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 0.625rem;
+	transition: all 0.1s;
+}
+#putWitchSelect .posison{
+	background-image: url(../img/poison.jpg);
+}
+#putWitchSelect .nothing{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	border: 0.0625rem solid beige;
+	text-wrap: wrap;
+	font-size: 2.1875rem;
+	color: #FFFFFF;
+	background: rgb(123,123,123);
+}
+#putWitchSelect .antidote{
+	background-image: url(../img/antidote.jpg);
+}
+#putWitchSelect .witchDiv.show{
+	transform: scale(1.1);
+}
+#witchSure{
+	height: 3.75rem;
+	width: 9.375rem;
+	border-radius: 0.625rem;
+	font-size: 1.5625rem;
+	background-color: #800080;
+	border: none;
+}
