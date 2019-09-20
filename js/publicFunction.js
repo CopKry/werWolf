@@ -51,3 +51,11 @@ function $addClassName(el,className){
 function $removeClassName(el,className){
 	el.classList.remove(className);
 }
+
+function $setItem(key,value){
+	localStorage.setItem(key,JSON.stringify(value))
+}
+
+function $getItem(key){
+	return JSON.parse(localStorage.getItem(key)) 
+}

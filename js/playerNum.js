@@ -49,7 +49,9 @@ document.addEventListener('plusready', function() {
 			if(!isChoose){
 				$alertTitle('请选择人数再进行游戏。');
 			}else{	
-				localStorage.setItem('userList',JSON.stringify(userList));
+				var user={};
+				user.userList=userList;
+				$setItem('user',user);
 				$alertTitle('游戏开始,哦嚯嚯嚯。');
 				$openHtml("selectStatus.html"); 
 			}

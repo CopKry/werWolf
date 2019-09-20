@@ -1,0 +1,99 @@
+.main{
+	top: 10%;
+	height: 75%;
+	width: 100%;
+	flex-wrap: wrap;
+}
+#putStatus{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	padding: 0.3125rem;
+}
+.main .card{
+	width: 32%;
+	height: 24%;
+	background: white;
+	position: relative;
+	background: url(../img/civilianCF.jpg) center no-repeat;
+	background-size: cover;
+}
+.card .cardBack{
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 3;
+	background:purple url(../img/cardBackBg.jpg) center no-repeat;
+	background-size: contain;
+}
+.card .num,
+.card .status{
+	color: #FFFFFF;
+	font-size: 1.5625rem;
+}
+.card .num{
+	margin-left: 0.625rem;
+}
+.card .status{
+	width: 100%;
+	position: absolute;
+	bottom: 2.5rem;
+	text-align: center;
+}
+.card.werWolf{
+	background-image: url(../img/werwolfCF.png);
+}
+.card.guard{
+	background-image: url(../img/guardCF.jpg);
+}
+.card.prophet{
+	background-image: url(../img/prophetCF.jpg);
+}
+.card.witch{
+	background-image: url(../img/prophetCF.jpg);
+}
+.cardBack.hidden{
+	display: none;
+}
+.card .face{
+	position: absolute;
+	top: 0.3125rem;
+	left: 0;
+	right: 0;
+	width: 40%;
+	height: 50%;
+	background:url(../img/civilian.png) center no-repeat;
+	background-size: contain;
+	margin: 0 auto;
+}
+.face.werWolf{
+	background-image: url(../img/werwolf.png);
+}
+.face.guard{
+	background-image: url(../img/guard.png);
+}
+.face.prophet{
+	background-image: url(../img/prophet.png);
+}
+.face.witch{
+	background-image: url(../img/witch.png);
+}
+.btnDiv{
+	width: 100%;
+	position: fixed;
+	bottom: 6%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+.btnDiv button{
+	width: 9.375rem;
+	height:4rem;
+	font-size: 1.5rem;
+	margin-left: 1.25rem;
+}
