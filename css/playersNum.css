@@ -22,9 +22,11 @@
 	font-size: 3.125rem;
 	border-radius: 0.3125rem;
 	box-shadow: #800080;
+	opacity: 0.5;
 }
 .choose.click{
 	transform: scale(1.2);
+	opacity: 1;
 }
 #showNum{
 	width: 100%;

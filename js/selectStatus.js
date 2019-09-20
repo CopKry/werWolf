@@ -1,6 +1,7 @@
 document.addEventListener('plusready', function() {
 	var userList=$getItem('user').userList;
-	$alertTitle(userList[0].status)
+	$alertTitle(userList[0].status);
+	userList=$randomArr(userList);
 	for(var i=0;i<userList.length;i++){
 		var status;
 		var backBgClass;
@@ -50,7 +51,12 @@ document.addEventListener('plusready', function() {
 				$removeClassName($getByClassName('cardBack')[i],'hidden');
 			}
 			$addClassName(_self,'hidden');
-		}else if(_self.id=='lookAll'){
+		}else if(_self.className.indexOf("card")!=-1){
+			$removeClassName(_self.getElementsByClassName('cardBack')[0],'hidden')	
+		}else if(_self.parentNode.className.indexOf("card")!=-1){
+			$removeClassName(_self.parentNode.getElementsByClassName('cardBack')[0],'hidden')	
+		}
+		else if(_self.id=='lookAll'){
 			if(clickNum%2===0){
 				for(var i=0;i<userList.length;i++){
 					$addClassName($getByClassName('cardBack')[i],'hidden');
@@ -61,6 +67,11 @@ document.addEventListener('plusready', function() {
 				}
 			}
 			clickNum++
+		}else if(_self.id=='next'){
+			var user={};
+			user.userList=userList;
+			$setItem('user',user);
+			$alertTitle('游戏，开始了')
 		}
 	})
 })

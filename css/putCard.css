@@ -27,8 +27,8 @@
 	height: 100%;
 	position: absolute;
 	z-index: 3;
-	background:purple url(../img/cardBackBg.jpg) center no-repeat;
-	background-size: contain;
+	background:url(../img/cardBackBg.jpg) center no-repeat;
+	background-size: cover;
 }
 .card .num,
 .card .status{
