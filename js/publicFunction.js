@@ -114,13 +114,13 @@ function $createCard(box, userList, userType) {
 		if (userType == 'roleAction') {
 			var die = $createElment('die');
 			var look = $createElment('look');
-			var guard = $createElment('guard');
+			var defand = $createElment('defand');
 			var poison = $createElment('poison');
 			var antidote = $createElment('antidote');
 			var state = $createElment('state');
 			var police = $createElment('police');
 			state.appendChild(poison);
-			state.appendChild(guard);
+			state.appendChild(defand);
 			state.appendChild(antidote);
 			div.appendChild(state);
 			div.appendChild(die);

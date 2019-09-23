@@ -45,7 +45,7 @@
 	background-repeat: no-repeat;
 	opacity: 0;
 }
-.state .guard{
+.state .defand{
 	background-image: url(../img/shield.jpg);
 }
 .state .poison{
@@ -55,7 +55,7 @@
 	background: url(../img/antidote.jpg);
 	background-size: contain;
 }
- .die.show,.antidote.show,.poison.show,.guard.show,.die.show,.look.show,.police.show{
+ .die.show,.antidote.show,.poison.show,.defand.show,.die.show,.look.show,.police.show{
 	opacity: 1;
 	display: block;
 }

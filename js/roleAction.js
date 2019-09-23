@@ -35,6 +35,7 @@ document.addEventListener('plusready', function() {
 				var antidote = $createElment('antidote');
 				antidote.className += ' witchDiv';
 				$getById('putWitchSelect').appendChild(antidote);
+				witchIndex = index;
 			}
 			var button = $createElment('button', 'id', 'witchSure');
 			button.innerText = '确认选择';
@@ -90,7 +91,7 @@ document.addEventListener('plusready', function() {
 				nowBeCao = returnList[1];
 				break;
 			case '守卫':
-				var returnList = $roleActive(_self, prev, 'card', 'guard', 'show', "num");
+				var returnList = $roleActive(_self, prev, 'card', 'defand', 'show', "num"); 
 				prev = returnList[0];
 				nowBeCao = returnList[1];
 				break;
